@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please use this citation when referring to the research software."
+type: software
+title: "Two weak-field measurements for predicting magnetic cantilever clearance"
+authors:
+  - family-names: Thaker
+    given-names: Vedant
+repository-code: "https://github.com/VEDANT1602/magnetic-cantilever-clearance"
+abstract: "Predicting cantilever clearance from paired weak-field measurements under calibration noise."
