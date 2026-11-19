@@ -1,31 +1,16 @@
-# Two weak-field measurements for predicting magnetic cantilever clearance
+# A better tip-height estimate can still miss the clearance decision
 
-Two magnetic cantilevers can bend by the same amount in a weak field and still fall on opposite sides of a gap at a stronger field. One extra reading is available. Is it better to repeat the displacement measurement or measure the tip angle?
+Consider a modeled beam whose tip reaches 0.5961 beam lengths, just below a gap at 0.6000. Two displacement readings predict 0.5873. Using displacement and angle predicts 0.6027. The angle-based estimate is closer to the reference height, yet it puts the tip on the wrong side of the gap. These are two predictions for the same soft-base beam and the same 1.5% slope perturbation. [Paired predictions](results.csv?plain=1#L1497)
 
-With exact calibration readings, adding angle lowers mean tip-height error from 0.00644 to 0.00157 beam lengths. With 5% perturbations, repeating displacement gives the lower error. Even at intermediate precision, the calibration with the smaller mean error can make more wrong clearance decisions.
+The calibration has a budget of two weak-field slope measurements. Repeating displacement fits a homogeneous compliance. Adding the tip angle lets the model fit two zones, at the price of greater sensitivity to noise. Each comparison covers 144 operating cases, four perturbation-sign assignments and four gap thresholds. The signs coincide at zero noise.
 
-[Read the manuscript (PDF)](manuscript.pdf) · [Browse the manuscript (Markdown)](manuscript.md) · [Inspect predictions (CSV)](results.csv) · [Inspect the independent solver check (CSV)](validation.csv)
+| Slope perturbation | Wrong gap decisions with repeated displacement | Wrong decisions with displacement and angle |
+| --- | ---: | ---: |
+| 0% | 16 / 2,304 | 4 / 2,304 |
+| 1.5% | 18 / 2,304 | 19 / 2,304 |
+| 5% | 24 / 2,304 | 49 / 2,304 |
 
-## What is measured
-
-A weak-field tip displacement samples a weighted average of bending compliance. A tip angle samples a different average. Together these two slopes identify the compliances of two equal-length zones, but the inversion amplifies measurement error. The comparison gives each calibration two slope readings. One model averages two displacements and assumes homogeneous compliance. The other uses displacement and angle to fit two zones.
-
-The finite-field test contains six generated compliance profiles, three overall compliance scales, two beam lengths and four field strengths. Four possible signs for the two measurement errors are evaluated at each perturbation magnitude. The movement is planar, the field is uniform and only the pre-contact shape is solved.
-
-## Which calibration gets the gap right?
-
-Height error is measured in beam lengths. A clearance decision asks whether the reference or predicted tip height reaches a gap. Each row covers 144 operating cases, four perturbation-sign assignments and four gap levels, for 2,304 decisions. The four assignments coincide at 0% perturbation.
-
-| Relative slope perturbation | Calibration | Mean absolute height error | Wrong decisions / 2,304 |
-|---|---|---:|---:|
-| 0% | Repeated displacement | 0.00644 | 16 |
-| 0% | Displacement and angle | 0.00157 | 4 |
-| 1.5% | Repeated displacement | 0.00698 | 18 |
-| 1.5% | Displacement and angle | 0.00478 | 19 |
-| 5% | Repeated displacement | 0.00937 | 24 |
-| 5% | Displacement and angle | 0.01439 | 49 |
-
-The perturbations are a deterministic sensitivity test. To transfer the result to a device, the experiment would need measured angle and displacement errors, a measured clearance and a separate check for electrical contact.
+The gap check uses simulated pre-contact tip height. An independent adaptive solver checks the spatial discretization in 24 configurations. Neither calculation models electrical contact or establishes a device's tolerance. [Solver comparison](validation.csv) · [Calculation](run.py#L47) · [Model and derivation](manuscript.md) · [Paper PDF](manuscript.pdf)
 
 ## Reproduce the comparison
 
