@@ -1,0 +1,11 @@
+# Study 06 public baseline replay — CPython 3.11.9, Linux x86_64, glibc 2.41.
+# Exact wheel hashes from the pip resolver; use a separate clean virtual environment.
+# Baseline direct versions follow the repository manifest; transitive versions are the current compatible resolution.
+# Installation: python -m pip install --require-hashes -r baseline-cp311-linux-x86_64.lock
+--index-url https://pypi.org/simple
+--only-binary :all:
+
+# numpy-1.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+numpy==1.26.0 --hash=sha256:e062aa24638bb5018b7841977c360d2f5917268d125c833a686b7cbabbec496c
+# scipy-1.11.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+scipy==1.11.2 --hash=sha256:3aeb87661de987f8ec56fa6950863994cd427209158255a389fc5aea51fa7055

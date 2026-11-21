@@ -1,0 +1,6 @@
+# Optional source extraction, CPython 3.12 Linux x86_64.
+--index-url https://pypi.org/simple
+--only-binary :all:
+-r revision-cp312-linux-x86_64.lock
+# pymupdf-1.26.6-cp310-abi3-manylinux_2_28_x86_64.whl
+PyMuPDF==1.26.6 --hash=sha256:7777d0b7124c2ebc94849536b6a1fb85d158df3b9d873935e63036559391534c

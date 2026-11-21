@@ -1,4 +1,18 @@
-# A better tip-height estimate can still miss the clearance decision
+# Decision loss for weak-field calibration of a magnetic cantilever
+
+Vedant Thaker · November 21, 2026
+
+A second weak-field channel can improve a beam-height estimate yet worsen predictions at particular contact gaps. This study compares repeated displacement, displacement plus tip angle, and a regularized two-zone inversion.
+
+- [Revised manuscript (PDF)](manuscript.pdf) · [Editable manuscript](manuscript.md)
+- [Revision code, results and reproduction instructions](revision/supplement/) · [Preparation record](revision/PREPARATION.md)
+- [Baseline software and results at the study commit](https://github.com/VEDANT1602/magnetic-cantilever-clearance/tree/48461d762b32c54be2fff4e839d2522956a14515) · [Software license](LICENSE) · [Third-party terms](LICENSING.md)
+
+## Earlier study and reproduction instructions
+
+The following instructions and results describe the original study. The revised paper and its supplemental tests are linked above.
+
+### A better tip-height estimate can still miss the clearance decision
 
 Consider a modeled beam whose tip reaches 0.5961 beam lengths, just below a gap at 0.6000. Two displacement readings predict 0.5873. Using displacement and angle predicts 0.6027. The angle-based estimate is closer to the reference height, yet it puts the tip on the wrong side of the gap. These are two predictions for the same soft-base beam and the same 1.5% slope perturbation. [Paired predictions](results.csv?plain=1#L1497)
 
@@ -10,7 +24,7 @@ The calibration has a budget of two weak-field slope measurements. Repeating dis
 | 1.5% | 18 / 2,304 | 19 / 2,304 |
 | 5% | 24 / 2,304 | 49 / 2,304 |
 
-The gap check uses simulated pre-contact tip height. An independent adaptive solver checks the spatial discretization in 24 configurations. Neither calculation models electrical contact or establishes a device's tolerance. [Solver comparison](validation.csv) · [Calculation](run.py#L47) · [Model and derivation](manuscript.md) · [Paper PDF](manuscript.pdf)
+The gap check uses simulated pre-contact tip height. An independent adaptive solver checks the spatial discretization in 24 configurations. Neither calculation models electrical contact or establishes a device's tolerance. [Solver comparison](validation.csv) · [Calculation](run.py#L47) · [Model and derivation](https://github.com/VEDANT1602/magnetic-cantilever-clearance/blob/48461d762b32c54be2fff4e839d2522956a14515/manuscript.md) · [Paper PDF](https://github.com/VEDANT1602/magnetic-cantilever-clearance/blob/48461d762b32c54be2fff4e839d2522956a14515/manuscript.pdf)
 
 ## Reproduce the comparison
 
