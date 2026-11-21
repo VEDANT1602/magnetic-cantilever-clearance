@@ -1,12 +1,9 @@
-# Two low-field readings for predicting the deflection of a magnetic strip
+# Choosing two calibration readings on three nominally uniform magnetic strips
 
-Technical report by Vedant Thaker, Independent Researcher, Jeffersonville, Indiana. Correspondence: vedant.thaker1602@gmail.com.
+Calibration report by Vedant Thaker, Independent Researcher, Jeffersonville, Indiana, USA.
 
-Should a second low-field measurement record another tip position or the tip angle? Published measurements on three nominally uniform magnetic cantilevers allow a retrospective test. Two low-load readings per strip were used to calibrate the model. Eighteen higher loads per strip were reserved for scoring. With one fitted compliance, average absolute errors were 0.731% of strip length for two displacements and 0.693% for displacement plus angle. Modest perturbations of the calibration readings reversed that ordering in four of eight cases. Allowing an unpenalized change in compliance at midspan increased the corresponding errors to 5.367% and 0.985%. These strips support a uniform calibration for predicting transverse deflection. They do not establish which reading to collect on a strip with a stiffness transition.
+On three nominally uniform magnetic cantilevers, does a low-field tip-angle reading improve prediction of high-field displacement compared with a second displacement reading? Each specimen supplied two calibration readings and eighteen held-out heights. Fitting one compliance gave mean absolute errors of 0.731% of strip length with two heights and 0.693% with height and angle. Their difference corresponds to about 5 µm at the published mean length, with one specimen contributing most of it. Moving the calibration loads or perturbing the plotted readings reversed the ordering. Allowing separate compliances on the two halves increased the unpenalized two-height error to 5.367%. In these three strips, assuming a spatially varying stiffness mattered more than the choice of the second reading.
 
-- [Read the paper](manuscript.pdf)
-- [Read the plain-text manuscript](manuscript.md)
-- [Reproduce the analysis and inspect the source and data records](study/README.md)
-- [Software license](LICENSE) and [third-party terms](LICENSING.md)
-- [Preparation record](study/PREPARATION.md)
-- [Previous manuscript and supplements](https://github.com/VEDANT1602/magnetic-cantilever-clearance/tree/960a47b87426987fe5c37ddc13d504710b0fbef0)
+[Paper (PDF)](manuscript.pdf) · [Editable text](manuscript.md) · [Methods and study files](study/README.md) · [Manuscript history](study/VERSION.md)
+
+[Author-owned software license](LICENSE) · [Third-party terms](LICENSING.md) · [Previous version](https://github.com/VEDANT1602/magnetic-cantilever-clearance/tree/37a2ce598420554d3761fd925fa28b2a4d4dcf1e)

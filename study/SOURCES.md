@@ -11,3 +11,5 @@ No externally published figure or per-load digitization is redistributed. The ex
 ## Evidence still missing
 
 Held-out displacement is a real physical response and can score a hypothetical geometric threshold. No acquired file has a blind, directly sensed switch-contact endpoint and independently measured weak-field slopes for graded coupons. Contact force, electrical continuity, device reliability and transfer to manufactured gradients remain untested.
+
+Section 5.4 reports only the mean and standard deviation of specimen length, 13.2 ± 0.2 mm. Neither the [EPFL publication record](https://infoscience.epfl.ch/entities/publication/4b853779-3ebd-41ab-bb7b-8ab30fe10dd1) nor the full article linked above identified a table of raw specimen-indexed responses or individual lengths. Corresponding author Pedro M. Reis is identified on the article’s first page and the [EPFL directory](https://people.epfl.ch/pedro.reis?lang=en). Original instrument output, individual dimensions and associated measurement uncertainties are the missing inputs.
