@@ -1,41 +1,12 @@
-# Decision loss for weak-field calibration of a magnetic cantilever
+# Two low-field readings for predicting the deflection of a magnetic strip
 
-Vedant Thaker · November 21, 2026
+Technical report by Vedant Thaker, Independent Researcher, Jeffersonville, Indiana. Correspondence: vedant.thaker1602@gmail.com.
 
-A second weak-field channel can improve a beam-height estimate yet worsen predictions at particular contact gaps. This study compares repeated displacement, displacement plus tip angle, and a regularized two-zone inversion.
+Should a second low-field measurement record another tip position or the tip angle? Published measurements on three nominally uniform magnetic cantilevers allow a retrospective test. Two low-load readings per strip were used to calibrate the model. Eighteen higher loads per strip were reserved for scoring. With one fitted compliance, average absolute errors were 0.731% of strip length for two displacements and 0.693% for displacement plus angle. Modest perturbations of the calibration readings reversed that ordering in four of eight cases. Allowing an unpenalized change in compliance at midspan increased the corresponding errors to 5.367% and 0.985%. These strips support a uniform calibration for predicting transverse deflection. They do not establish which reading to collect on a strip with a stiffness transition.
 
-- [Revised manuscript (PDF)](manuscript.pdf) · [Editable manuscript](manuscript.md)
-- [Revision code, results and reproduction instructions](revision/supplement/) · [Preparation record](revision/PREPARATION.md)
-- [Baseline software and results at the study commit](https://github.com/VEDANT1602/magnetic-cantilever-clearance/tree/48461d762b32c54be2fff4e839d2522956a14515) · [Software license](LICENSE) · [Third-party terms](LICENSING.md)
-
-## Earlier study and reproduction instructions
-
-The following instructions and results describe the original study. The revised paper and its supplemental tests are linked above.
-
-### A better tip-height estimate can still miss the clearance decision
-
-Consider a modeled beam whose tip reaches 0.5961 beam lengths, just below a gap at 0.6000. Two displacement readings predict 0.5873. Using displacement and angle predicts 0.6027. The angle-based estimate is closer to the reference height, yet it puts the tip on the wrong side of the gap. These are two predictions for the same soft-base beam and the same 1.5% slope perturbation. [Paired predictions](results.csv?plain=1#L1497)
-
-The calibration has a budget of two weak-field slope measurements. Repeating displacement fits a homogeneous compliance. Adding the tip angle lets the model fit two zones, at the price of greater sensitivity to noise. Each comparison covers 144 operating cases, four perturbation-sign assignments and four gap thresholds. The signs coincide at zero noise.
-
-| Slope perturbation | Wrong gap decisions with repeated displacement | Wrong decisions with displacement and angle |
-| --- | ---: | ---: |
-| 0% | 16 / 2,304 | 4 / 2,304 |
-| 1.5% | 18 / 2,304 | 19 / 2,304 |
-| 5% | 24 / 2,304 | 49 / 2,304 |
-
-The gap check uses simulated pre-contact tip height. An independent adaptive solver checks the spatial discretization in 24 configurations. Neither calculation models electrical contact or establishes a device's tolerance. [Solver comparison](validation.csv) · [Calculation](run.py#L47) · [Model and derivation](https://github.com/VEDANT1602/magnetic-cantilever-clearance/blob/48461d762b32c54be2fff4e839d2522956a14515/manuscript.md) · [Paper PDF](https://github.com/VEDANT1602/magnetic-cantilever-clearance/blob/48461d762b32c54be2fff4e839d2522956a14515/manuscript.pdf)
-
-## Reproduce the comparison
-
-Run from the repository root with Python 3.11. The study used Python 3.11.9, NumPy 1.26.0 and SciPy 1.11.2. It generates all beam profiles locally.
-
-```bash
-python -m pip install -r requirements.txt
-python run.py
-python verify.py
-```
-
-`run.py` writes the finite-field predictions to `results.csv` and compares two spatial resolutions with an adaptive collocation solver in `validation.csv`. `verify.py` uses the Python standard library to recompute gap crossings from the saved heights, check the six table rows and check the independent solver discrepancies.
-
-Repository maintained by **Vedant Thaker**.
+- [Read the paper](manuscript.pdf)
+- [Read the plain-text manuscript](manuscript.md)
+- [Reproduce the analysis and inspect the source and data records](study/README.md)
+- [Software license](LICENSE) and [third-party terms](LICENSING.md)
+- [Preparation record](study/PREPARATION.md)
+- [Previous manuscript and supplements](https://github.com/VEDANT1602/magnetic-cantilever-clearance/tree/960a47b87426987fe5c37ddc13d504710b0fbef0)

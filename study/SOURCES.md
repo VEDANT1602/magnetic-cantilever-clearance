@@ -1,0 +1,13 @@
+# Source and rights audit
+
+| Primary item | Full text inspected | Use |
+| --- | --- | --- |
+| Wang, Kim, Guo & Zhao, *Hard-magnetic elastica*, 2020 | [DOI](https://doi.org/10.1016/j.jmps.2020.104045) · [author full text](https://imechanica.org/sites/default/files/Hard-magnetic%20Elastica.pdf), Fig. 7 | Validation of large-deflection hard-magnetic beam theory against experiment. This publication supplies context, no numerical readings for this fit. |
+| Yan, Abbasi & Reis, 2022 | [DOI](https://doi.org/10.1016/j.ijsolstr.2021.111319) · [lab PDF](https://www.epfl.ch/labs/flexlab/wp-content/uploads/2022/05/98_Yan_IJSS_MagneticBeams.pdf), §§5.2, 5.4, 6.1, Eqs. 63–66 and Fig. 6 | Three independently fabricated, nominally identical longitudinally magnetized strips. The six plotted experimental marker series provide paired height and angle at 22 load levels. Dimensions and material parameters provide the gravity coefficient. Sampling three strips leaves no measure of graded-coupon performance. |
+| Y. Wang et al., 2026 | [Science Advances DOI](https://doi.org/10.1126/sciadv.aed3998) · [full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC13082321/), Results and Fig. 2A–G | Verified as an actual four-pad magnetic switch for selecting sensing channels. It supplies a physical distinction from the virtual clearance endpoint and no calibration measurements used here. |
+
+No externally published figure or per-load digitization is redistributed. The extracting script processes the user-obtained original PDF in memory. Fitted coefficients, specimen-level error summaries and aggregated perturbation effects are original outputs. Neither the authors' PDF nor experimental vector coordinates are included under the code license.
+
+## Evidence still missing
+
+Held-out displacement is a real physical response and can score a hypothetical geometric threshold. No acquired file has a blind, directly sensed switch-contact endpoint and independently measured weak-field slopes for graded coupons. Contact force, electrical continuity, device reliability and transfer to manufactured gradients remain untested.
