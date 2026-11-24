@@ -17,3 +17,7 @@ With index 0 at zero field, indices 1 and 2 provide the primary calibration pair
 ## Converting the uniform-fit difference to micrometres
 
 Run `python length_scale.py`. For each strip the input is the difference d between its two stored normalized MAEs. Multiplying by 13,200 µm, the common published mean length, gives nominal differences. The difference between this common-length mean and the unknown physical length-weighted mean equals the covariance of specimen length with d. Conditional on taking the reported length summaries literally, its absolute magnitude is at most 200 µm × the population SD of d, or 0.098 µm. The published mean and SD are rounded. This bound applies to that conversion only; it excludes optical errors, digitization errors and specimen variability.
+
+Running `python length_scale.py` also writes `specimen_influence.csv`. For each of the three strips it reports the mean two-height minus height-and-angle error contrast on the other two, in micrometres at the reported mean strip length, and that strip’s percentage of the net three-strip contrast. Opposite-signed contributions are retained.
+
+Run `python verify.py` to independently aggregate the released aggregate rows by calibration window and specimen, reproduce the main table and compare the eight signed perturbations. The command uses the Python standard library and needs no article PDF.

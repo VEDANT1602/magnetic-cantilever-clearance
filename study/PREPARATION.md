@@ -9,3 +9,15 @@ The supplement README identifies the inputs and computations needed to inspect t
 ## Current work
 
 Vedant Thaker is the sole author and set the research question. OpenAI Codex assisted with extracting measurements from the cited experiment, implementing the calibration comparisons, checking the specimen-level unit conversion and drafting the analysis.
+
+## November 22 analysis
+
+On November 22 the three existing specimen-level contrasts were re-expressed as leave-one-specimen-out means at the published mean strip length. No new physical reading or specimen length was added. The source authors have been contacted about the original measurements.
+
+## Date verification on November 22, 2026
+
+The author reports September 19–October 1, 2026 for the original work. The earliest public commit follows the end of the author-reported interval. Work during that interval cannot be verified from this history. The [first PDF commit](https://github.com/VEDANT1602/magnetic-cantilever-clearance/commit/bda381d5842843de3b833552df8b5714cd5ad9a4), the November 20 review copy, and the November 21 and 22 manuscript versions are recorded separately in [the manuscript history](VERSION.md).
+
+## November 24 editorial work
+
+Vedant Thaker supplied the critique and requested this revision. OpenAI Codex assisted with the analysis checks and revised prose. The manuscript describes the study-specific work and its limitations.

@@ -28,6 +28,17 @@ def contrast(input_table):
         writer.writerow(["mean", mean(diffs), 13200 * mean(diffs),
                          1000 * 0.2 * pstdev(diffs)])
 
+    # With three specimens, a leave-one-out mean is the average of the other two
+    # physical-strip contrasts. The signed sum is appropriate for the net change.
+    scaled = dict(zip(sorted(by_strip), (13200 * d for d in diffs), strict=True))
+    with (DIRECTORY / "specimen_influence.csv").open("w", newline="") as output:
+        writer = csv.writer(output)
+        writer.writerow(["omitted_specimen", "remaining_specimens", "mean_change_um",
+                         "omitted_pct_of_net_change"])
+        for name, difference in scaled.items():
+            others = [v for k, v in scaled.items() if k != name]
+            writer.writerow([name, len(others), mean(others), 100 * difference / sum(scaled.values())])
+
 
 if __name__ == "__main__":
     import argparse
